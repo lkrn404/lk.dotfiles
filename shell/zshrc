@@ -82,5 +82,8 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 # Enable vi mode for the shell
 bindkey -v
 
+# Extra/impermanent stuff
+source ~/.zsh_extra
+
 # Starship prompt
 eval "$(starship init zsh)"
