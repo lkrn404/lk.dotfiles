@@ -1,0 +1,39 @@
+# Lines starting with # are comments
+
+# prefer best format and merge
+#-f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best
+# New format syntax
+# Audio only mode
+-f bestvideo*+bestaudio/best
+-x
+
+# Do not copy the mtime
+--no-mtime
+
+-o "%(upload_date>%Y-%m-%d)s - %(title)s.%(ext)s"
+
+# Alternative option that does not make a folder
+#-o %(title)s.%(ext)s
+
+# uses some unicode alternatives for chars like ? : which can cause issues especially with windows
+--windows-filenames
+
+--embed-thumbnail 
+
+# metadata and web link to original video
+--add-metadata  
+
+# for live recording stuff, waits for stream to start and dls from the beginning
+--wait-for-video 30
+--live-from-start
+
+# yes this is google chrome yup
+--impersonate Chrome
+
+# set higher retry count
+--retries 30
+--file-access-retries 7
+--fragment-retries 30
+
+# archive settings
+#--download-archive archive.txt
