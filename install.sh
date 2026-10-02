@@ -38,6 +38,11 @@ if [ ! -L "$HOME/.local/bin/up" ]; then
    echo -e "$INSTALL $SCRIPT_DIR/update.sh -> $HOME/.local/bin/up"
    ln -s $SCRIPT_DIR/update.sh $HOME/.local/bin/up
 fi
+### Needs if check for os darwin
+if [ ! -L "$HOME/.local/bin/flushdns-mac" ]; then
+   echo -e "$INSTALL $SCRIPT_DIR/flushdns-mac.sh -> $HOME/.local/bin/flushdns"
+   ln -s $SCRIPT_DIR/flushdns-mac.sh $HOME/.local/bin/flushdns
+fi
 
 sleep $SLOW
 # --- SHELL ---

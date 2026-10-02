@@ -58,6 +58,11 @@ alias cp='cp -vi'
 alias mv='mv -vi'
 alias rm='rm -vi'
 
+# Install ghostty terminfo
+ghostinit(){
+   infocmp -x xterm-ghostty | ssh $1 -- tic -x -
+}
+
 #####################
 ### Shell Options ###
 #####################
