@@ -6,11 +6,22 @@ local keybind = vim.keymap.set
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.diagnostic.config({ jump = { float = true } })
+vim.diagnostic.config({
+  jump = {
+    on_jump = function(_, bufnr)
+      vim.diagnostic.open_float({
+        bufnr = bufnr,
+        scope = "cursor",
+        focus = false,
+      })
+    end,
+  },
+})
+
 vim.g.netrw_liststyle = 3 -- netrw tree style by default
 vim.g.have_nerd_font = true
 
--- Gentoo files fix
+-- Append vimfiles for operating systems that ship them OOTB
 vim.opt.rtp:append("/usr/share/vim/vimfiles")
 
 -- highlight text when yanking
