@@ -22,5 +22,8 @@ If you wish to use a different directory than ~/.dotfiles, override the environm
 - [x] mpv config 
 - [x] neovim config
 - [x] neat update script to update any unixlike system
+
+*Todo:*
 - [ ] help script to explain included utilities / scripts
 - [ ] maybe move all symlinked scripts to a folder within .local/bin or a seperate folder entirely
+- [ ] replace some symlinks with install 
