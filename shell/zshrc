@@ -23,9 +23,12 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 #--Plugins - Syntax Highlight, Completions, and Autosuggestions loaded with Zinit turbo mode
 zinit wait lucid for \
-  zsh-users/zsh-completions \
-  zsh-users/zsh-autosuggestions \
-  zdharma-continuum/fast-syntax-highlighting
+  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+    zsh-users/zsh-syntax-highlighting \
+  blockf \
+    zsh-users/zsh-completions \
+  atload"!_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions
 
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.cache/zsh
