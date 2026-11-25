@@ -93,10 +93,14 @@ bindkey -v
 # Extra/impermanent stuff
 source ~/.zsh_extra
 
-# Starship prompt
-eval "$(starship init zsh)"
-
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/lk/.lmstudio/bin"
 # End of LM Studio CLI section
 
+# Auto-start or attach to a tmux session named after the hostname
+if command -v tmux &> /dev/null && [[ -z "$TMUX" ]] && [[ -o interactive ]]; then
+  tmux new-session -A -s "${HOST%%.*}"
+fi
+
+# Starship prompt
+eval "$(starship init zsh)"

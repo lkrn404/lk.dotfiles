@@ -101,7 +101,7 @@ vim.pack.add({
 require("nvim-surround").setup()
 require("modus-themes").setup({
 	style = "auto",
-	variant = "default", -- `default`, `tinted`, `deuteranopia`, and `tritanopia`
+	variants = "default", -- `default`, `tinted`, `deuteranopia`, and `tritanopia`
 	transparent = false,
 	dim_inactive = true,
 	hide_inactive_statusline = false,
