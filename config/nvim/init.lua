@@ -136,43 +136,4 @@ require("blink.cmp").setup({
    signature = { enabled = true },
 })
 
--- filetypes
-vim.filetype.add({
-   pattern = {
-      ["%*ansible*.y*ml"] = "yaml.ansible",
-      ["%*docker-compose*.yml"] = "yaml.docker-compose",
-      ["docker-compose.yaml"] = "yaml.docker-compose",
-      ["compose.yml"] = "yaml.docker-compose",
-      ["compose.yaml"] = "yaml.docker-compose",
-   },
-})
-
-require("mason").setup({
-   ui = {
-      icons = {
-         package_installed = "✓",
-         package_pending = "➜",
-         package_uninstalled = "✗",
-      },
-   },
-})
-require("mason-lspconfig").setup({
-   ensure_installed = {
-      "lua_ls",
-      "ansiblels",
-      "clangd",
-      "powershell_es",
-      "docker_language_server",
-      "docker_compose_language_service",
-      "bashls",
-   },
-})
-vim.lsp.config("lua_ls", {
-   settings = {
-      Lua = {
-         workspace = {
-            library = vim.api.nvim_get_runtime_file("", true),
-         },
-      },
-   },
-})
+require("lsp")
