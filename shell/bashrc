@@ -42,3 +42,8 @@ alias cp='cp -vi'
 
 # -- Prompt --
 eval "$(starship init bash)"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/lk/.lmstudio/bin"
+# End of LM Studio CLI section
+

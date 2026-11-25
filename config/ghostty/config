@@ -7,10 +7,16 @@ window-width = 180
 window-height = 40
 
 # Theme
-#theme = Kanagawa Wave
 theme = Ayu
+# theme = Sonokai
 cursor-color=cell-foreground
 cursor-text=cell-background
 
 # Fix unsuitible term for ssh environment 
 shell-integration-features = ssh-terminfo,ssh-env
+
+#custom-shader = ./shaders/bloom.glsl
+#custom-shader = ./shaders/glow-rgbsplit-twitchy.glsl
+custom-shader = ./shaders/cursor_warp.glsl
+custom-shader = ./shaders/ripple_cursor.glsl
+# custom-shader = ./shaders/bloom025.glsl
